@@ -1,4 +1,4 @@
-const BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';  // DynamoDB or Local URL
 
 export async function fetchTasks(status) {
   const q = status ? `?status=${status}` : '';
