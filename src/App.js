@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchTasks, createTask, updateTask, deleteTask } from './api';
 import AddTaskForm from './components/AddTaskForm';
 import TaskList from './components/TaskList';
+import Chatbot from './components/Chatbot';
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
@@ -63,6 +64,13 @@ export default function App() {
           onDelete={handleDelete}
         />
       }
+
+      {/* 👇 Chatbot Component */}
+    <div style={{ marginTop: "2rem" }}>
+      <h2>AI Assistant</h2>
+      <Chatbot />
+    </div>
+
     </div>
   );
 }

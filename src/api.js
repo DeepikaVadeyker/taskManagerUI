@@ -28,3 +28,13 @@ export async function deleteTask(id) {
   const res = await fetch(`${BASE}/api/tasks/${id}`, { method: 'DELETE' });
   return res.json();
 }
+
+export async function sendChatMessage(message) {
+  const res = await fetch(`${BASE}/api/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message })
+  });
+  return res.json();
+}
+
