@@ -22,8 +22,7 @@ export default function App() {
 
   async function handleAdd(task) {
     const created = await createTask(task);
-    setTasks(prev => [created, ...prev]);
-  }
+setTasks(prev => [created, ...(Array.isArray(prev) ? prev : [])]);  }
 
   async function handleToggleComplete(task) {
     const updated = await updateTask(task._id, { completed: !task.completed });
